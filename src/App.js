@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import charactors from "./charactor.json";
+import charactors from "./charactors.json";
 import Container from "./components/Container/Container";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Row from "./components/Row/Row";
+import Section from "./components/Section/Section";
+import Card from "./components/Card/Card";
+import Image from "./components/Image/Image";
 
 class App extends Component {
     state = {
         charactors,
-        highScore = 0,
-        clicked =[]
+        highScore: 0,
+        clicked: []
     };
 
     randomize = array => {
@@ -45,7 +48,7 @@ class App extends Component {
     };
 
     checkHighScore = () => {
-        if (this.state.clicked.length > this.state.highestScore) {
+        if (this.state.clicked.length > this.state.highScore) {
             this.setState({ highScore: this.state.clicked.length });
         }
     }
@@ -60,7 +63,7 @@ class App extends Component {
     resetGame = () => {
         this.setState({
             charactors: this.randomize(this.state.charactors),
-            clicked =[]
+            clicked: []
         });
     }
 

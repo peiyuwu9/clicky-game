@@ -1,12 +1,12 @@
 import React from "react";
 
-function Image({ id, name, image, handleOnClickImage }) {
+function Image({ id, name, image, onClick }) {
     return (
         <img
             id={id}
             src={image}
             alt={name}
-            onClick={() => handleOnClickImage(id)}
+            onClick={() => onClick(id)}
         />
     )
 };
